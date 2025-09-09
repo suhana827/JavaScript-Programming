@@ -62,33 +62,33 @@
 
 // 3. Merge two sorted arrays without using extra space.
 
-// arr1 = [1, 4, 7, 8, 10]  
-// arr2 = [2, 3, 9]
+arr1 = [1, 4, 7, 8, 10]  
+arr2 = [2, 3, 9]
 
-// function MergeSortedArray (arr1,arr2) {
+function MergeSortedArray (arr1,arr2) {
 
-//   i = 0
-//   j = 0
+  i = 0
+  j = 0
 
-//   while (i < arr1.length && j < arr2.length) {
-//     arr1.push(arr2[j])
-//     i ++
-//     j ++
-//   }
+  while (i < arr1.length && j < arr2.length) {
+    arr1.push(arr2[j])
+    i ++
+    j ++
+  }
 
 
-//   for (let i = 0; i < arr1.length; i++){
-//     for (let j=0; j < arr1.length-1; j++){
-//     if (arr1[j] > arr1[j + 1]) {
-//       [arr1[j],arr1[j+1]] = [arr1[j+1],arr1[j]]
+  for (let i = 0; i < arr1.length; i++){
+    for (let j=0; j < arr1.length-1; j++){
+    if (arr1[j] > arr1[j + 1]) {
+      [arr1[j],arr1[j+1]] = [arr1[j+1],arr1[j]]
 
-//     }
-//   }
-// }
-// return arr1
-// }
+    }
+  }
+}
+return arr1
+}
 
-// console.log(MergeSortedArray(arr1,arr2))
+console.log(MergeSortedArray(arr1,arr2))
 
 
 // 4. Move all zeroes to the end of the array while maintaining order.
