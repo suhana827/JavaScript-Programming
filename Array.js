@@ -24,41 +24,89 @@
 // console.log(kadanAlgo(arr));
 
 
+
 // 2.Rearrange an array so that positive and negative numbers are placed alternately.
 
-let arr = [2, -4, 8, 1, -9, -2, 5];
+// let arr = [2, -4, 8, 1, -9, -2, 5];
 
-function rearrangeAlternate(arr) {
-  let pos = [];
-  let neg = [];
+// function rearrangeAlternate(arr) {
+//   let pos = [];
+//   let neg = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] >= 0) {
+//       pos.push(arr[i]);
+//     } else {
+//       neg.push(arr[i]);
+//     }
+//   }
+//   let result = [];
+//   let i = 0, j = 0;
+
+//   while (i < pos.length && j < neg.length) {
+//     result.push(pos[i++]); 
+//     result.push(neg[j++]); 
+//   }
+//   while (i < pos.length) {
+//     result.push(pos[i++]);
+//   }
+//   while (j < neg.length) {
+//     result.push(neg[j++]);
+//   }
+
+//   return result;
+// }
+
+// console.log(rearrangeAlternate(arr));
+
+
+// 3. Merge two sorted arrays without using extra space.
+
+// arr1 = [1, 4, 7, 8, 10]  
+// arr2 = [2, 3, 9]
+
+// function MergeSortedArray (arr1,arr2) {
+
+//   i = 0
+//   j = 0
+
+//   while (i < arr1.length && j < arr2.length) {
+//     arr1.push(arr2[j])
+//     i ++
+//     j ++
+//   }
+
+
+//   for (let i = 0; i < arr1.length; i++){
+//     for (let j=0; j < arr1.length-1; j++){
+//     if (arr1[j] > arr1[j + 1]) {
+//       [arr1[j],arr1[j+1]] = [arr1[j+1],arr1[j]]
+
+//     }
+//   }
+// }
+// return arr1
+// }
+
+// console.log(MergeSortedArray(arr1,arr2))
+
+
+// 4. Move all zeroes to the end of the array while maintaining order.
+
+let arr = [0, 2, 40, 8, 0, 0, 5, 4, 6, 7, 0];
+
+function MoveZero(arr) {
+  let insertPos = 0; 
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] >= 0) {
-      pos.push(arr[i]);
-    } else {
-      neg.push(arr[i]);
+    if (arr[i] !== 0) {
+      [arr[i], arr[insertPos]] = [arr[insertPos], arr[i]];
+      insertPos++;
     }
   }
 
- 
-  let result = [];
-  let i = 0, j = 0;
-
-  while (i < pos.length && j < neg.length) {
-    result.push(pos[i++]); 
-    result.push(neg[j++]); 
-  }
-
-
-  while (i < pos.length) {
-    result.push(pos[i++]);
-  }
-
-  while (j < neg.length) {
-    result.push(neg[j++]);
-  }
-
-  return result;
+  return arr;
 }
 
-console.log(rearrangeAlternate(arr));
+console.log(MoveZero(arr));
+
